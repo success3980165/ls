@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>《炼神》官方网站-逍遥仙侠回合制手游</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="keywords" content="炼神、问道、手游、回合制、仙侠、Q版">
+  <meta name="description" content="逍遥仙侠回合制手游《炼神》已开启公测预约，经典的玩法，创新的设计，强大的社交系统可以随时随地呼朋唤友。好玩不累，轻松回合，就在《炼神》！">
+
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=640,target-densitydpi=320, minimum-scale=0.5, maximum-scale=2,user-scalable=0">
+
+  <link rel="stylesheet" href="css/index.css?v=0.0.1">
+  <link rel="stylesheet" href="css/swiper.min.css">
+
+  <script type="text/javascript" src="//page.hulai.com/static/open/js/jquery.min.js"></script>
+  <script type="text/javascript" src="//page.hulai.com/static/open/js/isMobile.min.js"></script>
+  <script type="text/javascript" src="http://activity.api.hulai.com/static/open/js/hulai-activity-0.0.1.js"></script>
+  <script type="text/javascript" src="//page.hulai.com/static/open/js/vue-2.1.8.min.js"></script>
+  <script type="text/javascript" src="//page.hulai.com/static/open/js/hulai-cms-0.0.1.js?v=2017.10.24"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+
+  <!-- 自动跳转 -->
+  <script type="text/javascript">
+    if (!isMobile.any) {
+      var goUrl = '/index.html';
+      var url = window.location.href;
+      var urlArr = url.split('?')
+      if (urlArr.length > 1) {
+        goUrl = goUrl + '?' + urlArr[1];
+      }
+      location.replace(goUrl);
+    }
+  </script>
+
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1cc68f903224941c1ea8eee97ef4bddf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <style type="text/css">
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <div class="container">
+      <div class="menu" @click="showMenu()">
+
+      </div>
+      <div class="yuyue" @click="showDialog()">
+        <img src="img/yuyue.png" alt="">
+      </div>
+    <div class="footer">
+        <p>
+          温馨提示：抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防受骗上当，适度游戏益脑，沉迷游戏伤身，合理安排时间，享受健康生活
+          <br/> 本网站所有游戏仅适合于年满18周岁以上的用户。如果您未满18周岁，不建议您注册并使用本网络游戏服务；
+          <br/> 如果您坚持使用，请您务必加入本网络游戏防沉迷系统进行实名注册，同时我们将会按照您法定监护人的需求提供您在本网络游戏中的信息。
+          <br/> 您在使用本网络游戏服务之前已经明确知晓网络游戏可能给您带来的一切潜在威胁，包括长时间游戏可能不利于您的身心健康等。为了您的健康请您合理的使用本网络游戏。
+        </p>
+
+        <p>京ICP备11034336号-1 |
+          <a target="_blank" href="/assets/files/huai_wenwangwen.jpg">
+            <font>京网文[2011]0744-272号 |</font>
+          </a>
+          <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502033250">
+            <font><img src="http://www.beian.gov.cn/img/ghs.png">京公网安备 11010502033250号 |</font>
+          </a>
+          <a target="_blank" href="/assets/files/huai_xukezheng.pdf">
+            <font>（总）网出证（京）字第095号 |</font>
+          </a>
+          <a href="#">
+            <font>ICP证书号:京B2-20171148</font>
+          </a>
+        </p>
+        <p>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/server">服务协议 |</a>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/privacy">隐私权保护声明 |</a>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/minors">未成年人家长监护 |</a>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/law">法律声明 |</a>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/dispute">纠纷、投诉</a>
+        </p>
+        <p>
+          北京市石景山区八大处高科技园区西井路3号3号楼9229房间 010-62662622
+        </p>
+        <p>
+          Copyright © 2015 Hoolai Games. All Rights Reserved | 互爱互动（北京）科技有限公司版权所有
+        </p>
+
+      </div>
+    </div>
+    <!-- 蒙层 -->
+    <div id="cover" v-show="cover"></div>
+    <div id="cover2" v-show="cover2"></div>
+    <div id="cover3" v-show="cover3"></div>
+    <!-- 预约弹窗 -->
+    <div class="dialog" v-show="dialog">
+      <div class="yuyue_phone">
+        <div class="close" @click="closeDialog()">
+        </div>
+        <div class="xitong">
+          <p style="color:#4b4b4b;font-size:18px;display: inline-block;float:left;line-height:44px;">选择手机系统：</p>
+          <div class="android" v-bind:class="{active: isAnd}" @click="chooseXT('android')">android</div>
+          <div class="ios" v-bind:class="{active: isIos}" @click="chooseXT('ios')">ios</div>
+        </div>
+        <input v-model="telephone" class="telephone" type="text" name="telephone" placeholder="请输入手机号码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机号码'">
+        <div class="disf">
+          <input v-model="code" class="code" type="text" name="code" placeholder="请输入验证码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入验证码'">
+          <input v-bind:disabled="isDisabled" v-model="smsCodeVal" @click="sendSms(this)" v-bind:class="{grayBg:isGrayBg}" type="button" class="yanzheng cursorP" name="name">
+        </div>
+        <div class="yyyx mt10 cursorP" @click="saveRecord()"></div>
+        <div class="isyuyue">已有<span style="color:#ec0c26;">{{total}}</span>名玩家成功预约</div>
+      </div>
+    </div>
+    <div class="success" v-show="success">
+      <div class="closesuccess" @click="closeSuccess()"></div>
+    </div>
+    <div class="fail" v-show="fail">
+      <div class="closefail" @click="closeFail"></div>
+    </div>
+
+    <!-- 列表弹窗 -->
+    <div class="list" v-show="list">
+      <div class="one">
+        <img class="one" style="margin-left:47%;" src="img/list1.png" alt="">
+        <img style="margin-left:9%;margin-top:87px;" src="img/xian1.png" alt="">
+        <img @click="showNews()" style="margin-left:9%;" src="img/xinwen.png" alt="">
+        <img style="margin-left:9%;" src="img/xian1.png" alt="">
+        <img @click="showWanfa()" style="margin-left:9%;" src="img/wanfa.png" alt="">
+        <img style="margin-left:9%;" src="img/xian1.png" alt="">
+        <img @click="showWanjia()" style="margin-left:9%;" src="img/jiaoliu.png" alt="">
+        <img style="margin-left:9%;" src="img/xian1.png" alt="">
+        <img @click="closMenu()" style="margin-left:9%;" src="img/return.png" alt="">
+        <img style="margin-left:9%;" src="img/xian1.png" alt="">
+        <img @click="closMenu()" style="margin-left:45%;margin-top:83px;" src="img/closelist.png" alt="">
+      </div>
+
+    </div>
+
+    <!-- 列表弹窗 -->
+    <div class="news" v-show="news">
+      <div class="cross"><img src="img/news.jpg" alt=""></div>
+      <div class="list_top">
+        <div class="newspic" v-for="(item, index) in isRecommend">
+          <a target="_top" :href="item.fields['跳转链接']"  @click="opendetail(item.id)">
+            <img :src="item.fields['缩略图移动']" alt="">
+          </a>
+          <p class="portal_title">{{item.title}}</p>
+        </div>
+      </div>
+      <div class="list_bottom">
+        <ul class="content">
+          <li v-for="item in listData" class="list_all">
+            <a href="javascript:;" @click="opendetail(item.id)">
+              <span class="w400">
+                <span><span>[</span>{{listName}}<span>]</span></span>
+                <span class="bg_title">{{item.title}}</span>
+              </span>
+              <span class="fr_dis">{{item.updated}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <img @click="closeNews()" style="margin-left:45%;margin-top:-60px;padding-bottom: 20px;" src="img/closelist.png" alt="">
+    </div>
+
+    <!-- 文章弹窗 -->
+    <div class="detail" v-show="detail">
+      <div class="article">
+        <p class="article_title" style="font-size:20px;" v-html="article_title"></p>
+        <p class="article_time" style="font-size:16px;line-height: 78px;" v-html="article_time"></p>
+        <div class="article_content" style="height:700px;overflow-y: scroll;font-size:16px;line-height: 38px;" v-html="article_content"></div>
+      </div>
+      <img @click="closedetail()" style="margin-left:45%;margin-top:10px;" src="img/closelist.png" alt="">
+    </div>
+
+    <!-- 玩法介绍弹窗 -->
+    <div class="news" v-show="wanfa">
+      <div class="cross"><img src="img/wanfajieshao.png" alt=""></div>
+      <div class="list_top">
+        <div class="newspic" v-for="(item, index) in isRecommend">
+          <a target="_top" :href="item.fields['跳转链接']"  @click="opendetail(item.id)">
+            <img :src="item.fields['缩略图移动']" alt="">
+          </a>
+          <p class="portal_title">{{item.title}}</p>
+        </div>
+      </div>
+      <div class="list_bottom">
+        <ul class="content">
+          <li v-for="item in listData" class="list_all">
+            <a href="javascript:;" @click="opendetail(item.id)">
+              <span class="w400">
+                <span><span>[</span>{{listName}}<span>]</span></span>
+                <span class="bg_title">{{item.title}}</span>
+              </span>
+              <span class="fr_dis">{{item.updated}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <img @click="closeWanfa()" style="margin-left:45%;margin-top:-60px;padding-bottom: 20px;" src="img/closelist.png" alt="">
+    </div>
+
+    <!-- 玩家交流弹窗 -->
+    <div class="wanjia" v-show="wanjia">
+      <div class="cross"><img src="img/wanjiabutton.jpg" alt=""></div>
+      <div class="" style="text-align: center;margin-top:107px;"><img src="img/qq.jpg" alt=""></div>
+      <p style="color: #fff;text-align: center;margin-top: 25px;">《炼神》官方QQ群</p>
+      <p style="color: #fff;text-align: center;">488761527</p>
+      <img @click="closeWanjia()" style="margin-left:45%;margin-top:416px;" src="img/closelist.png" alt="">
+    </div>
+  </div>
+  <script type="text/javascript" src="js/index.js?v=0.0.7"></script>
+
+</body>
+
+</html>

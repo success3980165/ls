@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>《炼神》官方网站-逍遥仙侠回合制手游</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="keywords" content="炼神、问道、手游、回合制、仙侠、Q版">
+  <meta name="description" content="逍遥仙侠回合制手游《炼神》已开启公测预约，经典的玩法，创新的设计，强大的社交系统可以随时随地呼朋唤友。好玩不累，轻松回合，就在《炼神》！">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript" src="//page.hulai.com/static/open/js/jquery.min.js"></script>
+  <script type="text/javascript" src="//page.hulai.com/static/open/js/isMobile.min.js"></script>
+  <script type="text/javascript" src="http://activity.api.hulai.com/static/open/js/hulai-activity-0.0.1.js"></script>
+  <script type="text/javascript" src="//page.hulai.com/static/open/js/vue-2.1.8.min.js"></script>
+  <script type="text/javascript" src="//page.hulai.com/static/open/js/hulai-cms-0.0.1.js?v=2017.10.24"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <!-- <script type="text/javascript" src="/js/common.js?v=20171229"></script> -->
+  <script type="text/javascript">
+    if (isMobile.any) {
+      var goUrl = '/m/home';
+      var url = window.location.href;
+      var urlArr = url.split('?')
+      if (urlArr.length > 1) {
+        goUrl = goUrl + '?' + urlArr[1];
+      }
+      location.replace(goUrl);
+    }
+    // var version = "20171229";
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1cc68f903224941c1ea8eee97ef4bddf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <!-- 导航 -->
+    <div class="container">
+      <!-- 导航 -->
+      <div class="mid">
+        <ul class="nav">
+          <li class="page1 page">官网首页</li>
+          <li class="longpage">
+            <ul class="nav1" style="display:none">
+              <li class="page2 page" @click="openNews()">新闻资讯</li>
+              <li class="page3 page" @click="openWanfa()">玩法介绍</li>
+              <li class="page4 page" @click="openWanjia()">玩法交流</li>
+              <li class="page5">收起菜单</li>
+            </ul>
+          </li>
+        <li class="page6 one">更多菜单</li>
+        </ul>
+      </div>
+      <div class="yuyue" @click="popYuyue()"></div>
+      <div class="footer">
+        <p>
+          温馨提示：抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防受骗上当，适度游戏益脑，沉迷游戏伤身，合理安排时间，享受健康生活
+          <br/> 本网站所有游戏仅适合于年满18周岁以上的用户。如果您未满18周岁，不建议您注册并使用本网络游戏服务；
+          <br/> 如果您坚持使用，请您务必加入本网络游戏防沉迷系统进行实名注册，同时我们将会按照您法定监护人的需求提供您在本网络游戏中的信息。
+          <br/> 您在使用本网络游戏服务之前已经明确知晓网络游戏可能给您带来的一切潜在威胁，包括长时间游戏可能不利于您的身心健康等。为了您的健康请您合理的使用本网络游戏。
+        </p>
+
+        <p>京ICP备11034336号-1 |
+          <a target="_blank" href="/assets/files/huai_wenwangwen.jpg">
+            <font>京网文[2011]0744-272号 |</font>
+          </a>
+          <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502033250">
+            <font><img src="http://www.beian.gov.cn/img/ghs.png">京公网安备 11010502033250号 |</font>
+          </a>
+          <a target="_blank" href="/assets/files/huai_xukezheng.pdf">
+            <font>（总）网出证（京）字第095号 |</font>
+          </a>
+          <a href="#">
+            <font>ICP证书号:京B2-20171148</font>
+          </a>
+        </p>
+        <p>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/server">服务协议 |</a>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/privacy">隐私权保护声明 |</a>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/minors">未成年人家长监护 |</a>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/law">法律声明 |</a>
+          <a class="c_white" target="_blank" href="http://www.hulai.com/dispute">纠纷、投诉</a>
+        </p>
+        <p>
+          北京市石景山区八大处高科技园区西井路3号3号楼9229房间 010-62662622
+        </p>
+        <p>
+          Copyright © 2015 Hoolai Games. All Rights Reserved | 互爱互动（北京）科技有限公司版权所有
+        </p>
+      </div>
+    </div>
+    <div class="error" v-show="error"><img src="img/cross.png" alt="" @click="closeError()"></div>
+    <div class="success" v-show="success" @click="closeSuccess()"></div>
+    <!-- 蒙层 -->
+    <div class="cover" v-show="cover" @click="closePop()"></div>
+    <!-- 深蒙层 -->
+    <div class="nextcover" v-show="nextcover"></div>
+    <!-- 文章蒙层 -->
+    <div class="detailcover" v-show="detailcover"></div>
+    <!-- 预约 -->
+    <div class="nowYuyue" v-show="popYuyueShow">
+      <div class="yuyuecross"><img src="img/cross.png" alt="" @click="closePop()"></div>
+      <div class="now">
+      <div class="disf">
+        <div style="padding-top: 8px;color: #828282;font-size:16px">选择手机系统：</div>
+          <div class="cursorP android" v-bind:class="{active: isAndroidActive}" @click="chooseXT('android')">Android</div>
+          <div class="cursorP ios" v-bind:class="{active: isiOSActive}" @click="chooseXT('ios')">iOS</div>
+        </div>
+        <input v-model="telephone" class="telephone mt10" type="text" name="telephone" placeholder="请输入手机号码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机号码'">
+        <div class="disf mt10">
+          <input v-model="code" class="code" type="text" name="code" placeholder="请输入验证码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入验证码'">
+          <input v-bind:disabled="isDisabled" v-model="smsCodeVal" @click="sendSms(this)" v-bind:class="{grayBg:isGrayBg}" type="button" class="yanzheng cursorP" name="name" value="发送验证码">
+        </div>
+        <div class="yyyx mt10 cursorP" @click="saveRecord()"><img src="img/yuyuebtn.png" alt=""></div>
+        <div style="color:#426b9f;font-size:15px;text-align:center;margin-top: 15px;">已有<span style="color:#eb6949">{{totalNum}}</span>名玩家预约!</div>
+      </div>
+    </div>
+    <!-- 玩家交流 -->
+    <div class="wanjia" v-show="wanjia">
+      <div class="cross"><img src="img/cross.png" alt="" @click="closePop()"></div>
+      <div class="gameperson">玩家交流</div>
+      <div class="jiaoliu"><img src="img/jiaoliu.png" alt=""></div>
+    </div>
+    <!-- 新闻资讯 -->
+    <div class="news" v-show="news">
+      <div class="cross"><img src="img/cross.png" alt="" @click="closePop()"></div>
+      <div class="newslist">新闻资讯</div>
+      <div class="list_top">
+        <div class="newspic" v-for="(item, index) in isRecommend">
+          <a target="_top" :href="item.fields['跳转链接']"  @click="opendetail(item.id)">
+            <img :src="item.fields['缩略图PC']" alt="">
+          </a>
+          <p class="portal_title">{{item.title}}</p>
+        </div>
+      </div>
+      <div class="list_bottom">
+        <ul class="content">
+          <li v-for="item in listData" class="list_all">
+            <a href="javascript:;" @click="opendetail(item.id)">
+              <span class="w400">
+                <span><span>[</span>{{listName}}<span>]</span></span>
+                <span class="bg_title">{{item.title}}</span>
+              </span>
+              <span class="fr_dis">{{item.updated}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+      <!-- 文章 -->
+    <div class="detail" v-show="detail">
+      <div class="cross"><img src="img/cross.png" alt="" @click="closedetail()"></div>
+      <p class="article_title" v-html="article_title"></p>
+      <p class="article_time" v-html="article_time"></p>
+      <div class="article_content" v-html="article_content"></div>
+    </div>
+    <!-- 玩法介绍 -->
+    <div class="wanfa" v-show="wanfa">
+      <div class="cross"><img src="img/cross.png" alt="" @click="closePop()"></div>
+      <div class="newslist">玩法介绍</div>
+      <div class="list_top">
+        <div class="newspic" v-for="(item, index) in isRecommend">
+          <a target="_top" :href="item.fields['跳转链接']"  @click="opendetail(item.id)">
+            <img :src="item.fields['缩略图PC']" alt="">
+          </a>
+          <p class="portal_title">{{item.title}}</p>
+        </div>
+      </div>
+      <div class="list_bottom">
+        <ul class="content">
+          <li v-for="item in listData" class="list_all">
+            <a href="javascript:;" @click="opendetail(item.id)">
+              <span class="w400">
+                <span><span>[</span>{{listName}}<span>]</span></span>
+                <span class="bg_title">{{item.title}}</span>
+              </span>
+              <span class="fr_dis">{{item.updated}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/index_jq.js"></script>
+</body>
+</html>
